@@ -21,7 +21,7 @@ function getComputerChoice (choice1, choice2, choice3) {
 let compSelection = getComputerChoice("rock", "paper", "sciccors");
 console.log(compSelection);
 
-let getPlayerSelection = prompt("choose your weapon")
+//let getPlayerSelection = prompt("choose your weapon")
 let playerSelection = getPlayerSelection.toLowerCase();
 console.log(playerSelection)
 
