@@ -25,8 +25,10 @@ let getPlayerSelection = prompt("choose your weapon")
 let playerSelection = getPlayerSelection.toLowerCase();
 console.log(playerSelection)
 
+
 function playRound (playerSelection, compSelection){
-    if (playerSelection == "rock" && compSelection == "paper"){
+
+    if (playerSelection === "rock" && compSelection === "paper"){
         return("You lose! Paper beats Rock")
     }
     else if (playerSelection === "paper" && compSelection === "scissors"){
@@ -41,20 +43,24 @@ function playRound (playerSelection, compSelection){
     else {
         return ("You won!")
     }
+
 }
 
-let result = playRound(playerSelection, compSelection);
+console.log(playRound(playerSelection, compSelection));
 
-let score = 0 
 
 function game() {
-    for(i = 0; i < 5; i++);
+    let finalScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let score = playRound(playerSelection, compSelection);
+        finalScore += score;
+
+        console.log(`Score ${i + 1}: ${score}`);
+    }
+
+return finalScore;
 }
-if (result == "You won!") {
-    score++;
-}
 
-
-console.log(score)
-console.log(result)
-
+let finalScore = game();
+console.log(`End score: ${finalScore}`)
