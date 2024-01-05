@@ -2,6 +2,12 @@ body {
     background-color: gray;
 }
 
+.all {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+
 .players {
     display: flex;
     flex-direction: row;
@@ -9,6 +15,7 @@ body {
     margin-bottom: 20px;
     justify-content: space-around;
     font-style: italic;
+    font-size: x-large;
 }
 
 .btns {
@@ -21,6 +28,7 @@ p {
     font-size: x-large;
     font-style: italic;
     text-align: center;
+    padding: 100px;
 }
 
 button {
@@ -33,4 +41,8 @@ button {
     padding-right: 10px;
     padding-bottom: 5px;
     font-size: large;
+}
+
+.comp {
+    color: red;
 }
