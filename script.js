@@ -1,5 +1,8 @@
 //script
 
+let players = document.querySelector('players')
+let buttons = document.querySelector('buttons')
+
 function getComputerChoice (choice1, choice2, choice3) {
     let choice = Math.floor(Math.random() * 3)
         switch (choice) {
@@ -60,6 +63,10 @@ function game() {
     }
 
 return finalScore;
+}
+
+buttons.addEventListener('click'){
+    alert('game started')
 }
 
 let finalScore = game();
