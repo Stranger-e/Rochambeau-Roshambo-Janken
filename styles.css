@@ -1,5 +1,8 @@
 body {
     background-color: gray;
+    background-image: url(../Pictures/andrew-neel-jtsW--Z6bFw-unsplash.jpg);
+    background-size: cover;
+
 }
 
 .all {
@@ -16,6 +19,7 @@ body {
     justify-content: space-around;
     font-style: italic;
     font-size: x-large;
+    color: white;
 }
 
 .btns {
@@ -25,10 +29,11 @@ body {
 }
 
 p {
-    font-size: x-large;
+    font-size: xx-large;
     font-style: italic;
     text-align: center;
-    padding: 100px;
+    padding: 50px;
+    color: white;
 }
 
 button {
@@ -44,5 +49,18 @@ button {
 }
 
 .comp {
+    color: greenyellow;
+}
+
+.player {
+    color: green;
+}
+
+.final {
+    color: white;
+    font-size: xx-large;
+    padding-top: 10px;
+    text-align: center;
+    font-weight: bolder;
     color: red;
 }
