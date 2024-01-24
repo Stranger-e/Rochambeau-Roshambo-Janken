@@ -1,5 +1,5 @@
 //script
-let playerSelection;
+let playerSelection
 
 function handleButtonClick(selection){
     playerSelection = selection;
@@ -8,17 +8,17 @@ function handleButtonClick(selection){
 
 document.querySelector(".rock").addEventListener("click", function(){
     handleButtonClick("ROCK")
-    playRound(playerSelection,compSelection)
+    game()
 })
 
 document.querySelector(".paper").addEventListener("click", function(){
     handleButtonClick("PAPER")
-    playRound(playerSelection,compSelection)
+    game()
 })
 
 document.querySelector(".scissors").addEventListener("click", function(){
     handleButtonClick("SCISSORS")
-    playRound(playerSelection,compSelection)
+    game()
 })
 
 
@@ -57,7 +57,11 @@ console.log(compSelection);
 
 let result = document.querySelector(".results")
 
+let roundsPlayed = 0 
+
 function playRound(player, comp) {
+
+     let compSelection = getComputerChoice("rock", "paper", "scissors")
 
     if (player === "ROCK" && comp === "PAPER"){
         result.textContent = "You lost, paper beats rock"
@@ -83,15 +87,44 @@ function playRound(player, comp) {
         playerScore++
     }
 
+   
     updateScore()
+    roundsPlayed++
 }
 
-//function playGame() {
-//       
-//    for(let i =0; i < 5; i++){
-//       
-//        playRound(playerSelection,compSelection)
-//    }
-//}
+let final = document.querySelector(".final")
+
+function finalScore(){
+    if (computerScore > playerScore){
+        final.textContent = `Final Score: You lost by ${computerScore}`
+    }
+
+    else if (computerScore === playerScore){
+        final.textContent = `Final Score: DRAW`
+    }
+
+    else {
+        final.textContent = `Final Score: You won by ${playerScore}`
+    }
+}
+
+function game() {
+       
+    if(roundsPlayed < 4 ){
+        playRound(playerSelection, compSelection)
+        
+    }
+
+    else if (roundsPlayed === 4){
+        result.textContent = "GAME OVER!"
+        playerScore = 0
+        computerScore = 0
+        finalScore()
+
+   }
+
+    
+    
+}
 
 //playGame()
